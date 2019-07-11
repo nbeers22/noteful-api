@@ -22,10 +22,6 @@ app.use(express.json());
 app.use('/api/folders',foldersRouter);
 app.use('/api/notes',notesRouter);
 
-app.get('/', (req, res) => {
-  res.send("Hello World!");
-});
-
 const errorHandler = (error,req,res,next) => {
   let response;
   if (NODE_ENV === "production") {
