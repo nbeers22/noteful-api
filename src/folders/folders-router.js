@@ -23,7 +23,7 @@ foldersRouter
   })
   .post(jsonParser, (req, res, next) => {
     const { name, date_created } = req.body
-    const newFolder = { name, date_created }
+    const newFolder = { name }
 
     for (const [key, value] of Object.entries(newFolder))
       if (value == null)
