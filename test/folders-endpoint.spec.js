@@ -17,12 +17,12 @@ describe.only('Folders Endpoints', () => {
     db.destroy();
   });
 
-  before('clean the folders table', () => {
-    db('folders').truncate();
+  before('clean the tables', () => {
+    db.raw('TRUNCATE folders, notes RESTART IDENTITY CASCADE');
   });
 
   afterEach('Remove test folders from table', () => {
-    db('folders').truncate();
+    db.raw('TRUNCATE folders, notes RESTART IDENTITY CASCADE');
   });
 
   describe('GET /api/folders', () => {
